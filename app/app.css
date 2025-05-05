@@ -390,83 +390,81 @@
   }
 }
 
-@layer utilities {
-  .wrapper {
-    @apply w-full max-w-7xl mx-auto px-4 lg:px-8;
-  }
-  .wrapper-md {
-    @apply w-full max-w-3xl px-4 lg:px-8 mx-auto;
-  }
-  .flex-center {
-    @apply flex justify-center items-center;
-  }
-  .flex-between {
-    @apply flex justify-between items-center;
-  }
-  .p-72-bold {
-    @apply text-5xl md:text-7xl font-bold;
-  }
-  .p-40-semibold {
-    @apply text-3xl md:text-[40px] md:leading-[44px] font-semibold;
-  }
+@utility wrapper {
+  @apply w-full max-w-7xl mx-auto px-4 lg:px-8;
+}
+@utility wrapper-md {
+  @apply w-full max-w-3xl px-4 lg:px-8 mx-auto;
+}
+@utility flex-center {
+  @apply flex justify-center items-center;
+}
+@utility flex-between {
+  @apply flex justify-between items-center;
+}
+@utility p-72-bold {
+  @apply text-5xl md:text-7xl font-bold;
+}
+@utility p-40-semibold {
+  @apply text-3xl md:text-[40px] md:leading-[44px] font-semibold;
+}
 
-  .p-30-bold {
-    @apply text-2xl md:text-3xl font-bold;
-  }
-  .p-28-bold {
-    @apply text-[20px] md:text-[28px] leading-[16px] md:leading-[20px] font-bold;
-  }
-  .p-28-semibold {
-    @apply text-[20px] text-2xl md:text-[28px] leading-[16px] md:leading-[20px] font-semibold;
-  }
-  .p-24-semibold {
-    @apply text-lg md:text-2xl font-semibold;
-  }
-  .p-20-semibold {
-    @apply text-base md:text-[20xp] md:leading-7 font-semibold;
-  }
-  .p-18-bold {
-    @apply text-[14px] md:text-[18px] leading-[14px] md:leading-[16px] font-bold;
-  }
-  .p-18-semibold {
-    @apply text-[14px] md:text-[18px] leading-[14px] md:leading-[16px] font-semibold;
-  }
-  .p-18-regular {
-    @apply text-[14px] md:text-[18px] leading-[14px] md:leading-[16px] font-normal;
-  }
-  .p-16-semibold {
-    @apply text-sm md:text-base font-semibold;
-  }
-  .button-class {
-    @apply !bg-primary-100 !px-4 !rounded-lg !flex !items-center !justify-center !gap-1.5 !shadow-none;
-  }
-  .button-class-secondary {
-    @apply !bg-white !px-4 !rounded-lg !flex !items-center !justify-center !gap-1.5 !shadow-sm;
-  }
-  .form-label {
-    @apply text-sm font-normal text-gray-100;
-  }
-  .form-input {
-    @apply p-3.5 border border-light-400 rounded-xl text-base text-dark-300 font-normal;
-  }
-  .comboBox-popup {
-    @apply absolute z-10 top-24 bg-white border border-gray-200 rounded-xl shadow-200 h-[250px] w-full md:max-w-[660px] overflow-hidden;
-  }
-  .tripCard-pill {
-    @apply bg-white py-1 px-2.5 w-fit rounded-[20px] absolute top-2.5 right-4 text-dark-100 text-sm font-semibold;
-  }
-  .price-pill {
-    @apply bg-white py-0.5 px-2.5 w-fit rounded-[20px] top-2.5 right-4 text-dark-100 text-sm font-semibold;
-  }
-  .trip-grid {
-    @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7;
-  }
-  .nav-item {
-    @apply flex items-center text-xs md:text-lg font-normal cursor-pointer gap-2.5 py-[18px] px-3.5 rounded-lg text-dark-200 hover:bg-primary-100 hover:text-white;
-  }
-  .combo-box {
-    @apply !p-3.5 !border w-full !border-light-400 !rounded-xl !text-base !text-dark-300 !font-normal;
-  }
+@utility p-30-bold {
+  @apply text-2xl md:text-3xl font-bold;
+}
+@utility p-28-bold {
+  @apply text-[20px] md:text-[28px] leading-[16px] md:leading-[20px] font-bold;
+}
+@utility p-28-semibold {
+  @apply text-[20px] text-2xl md:text-[28px] leading-[16px] md:leading-[20px] font-semibold;
+}
+@utility p-24-semibold {
+  @apply text-lg md:text-2xl font-semibold;
+}
+@utility p-20-semibold {
+  @apply text-base md:text-[20xp] md:leading-7 font-semibold;
+}
+@utility p-18-bold {
+  @apply text-[14px] md:text-[18px] leading-[14px] md:leading-[16px] font-bold;
+}
+@utility p-18-semibold {
+  @apply text-[14px] md:text-[18px] leading-[14px] md:leading-[16px] font-semibold;
+}
+@utility p-18-regular {
+  @apply text-[14px] md:text-[18px] leading-[14px] md:leading-[16px] font-normal;
+}
+@utility p-16-semibold {
+  @apply text-sm md:text-base font-semibold;
+}
+@utility button-class {
+  @apply !bg-primary-100 !px-4 !rounded-lg !flex !items-center !justify-center !gap-1.5 !shadow-none;
+}
+@utility button-class-secondary {
+  @apply !bg-white !px-4 !rounded-lg !flex !items-center !justify-center !gap-1.5 !shadow-sm;
+}
+@utility form-label {
+  @apply text-sm font-normal text-gray-100;
+}
+@utility form-input {
+  @apply p-3.5 border border-light-400 rounded-xl text-base text-dark-300 font-normal;
+}
+@utility comboBox-popup {
+  @apply absolute z-10 top-24 bg-white border border-gray-200 rounded-xl shadow-200 h-[250px] w-full md:max-w-[660px] overflow-hidden;
+}
+@utility tripCard-pill {
+  @apply bg-white py-1 px-2.5 w-fit rounded-[20px] absolute top-2.5 right-4 text-dark-100 text-sm font-semibold;
+}
+@utility price-pill {
+  @apply bg-white py-0.5 px-2.5 w-fit rounded-[20px] top-2.5 right-4 text-dark-100 text-sm font-semibold;
+}
+@utility trip-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7;
+}
+@utility nav-item {
+  @apply flex items-center text-xs md:text-lg font-normal cursor-pointer gap-2.5 py-[18px] px-3.5 rounded-lg text-dark-200 hover:bg-primary-100 hover:text-white;
+}
+@utility combo-box {
+  @apply !p-3.5 !border w-full !border-light-400 !rounded-xl !text-base !text-dark-300 !font-normal;
 }
 
 html,
