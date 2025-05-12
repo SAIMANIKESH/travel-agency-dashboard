@@ -1,10 +1,46 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router';
+import { ChipListComponent, ChipDirective, ChipsDirective } from '@syncfusion/ej2-react-buttons';
+import { cn, getFirstWord } from './../app/lib/utils'; // -> ~/lib/utils
 
-const TripCard = () => {
+const TripCard = ({
+  id,
+  name,
+  imageUrl,
+  location,
+  tags,
+  price,
+}: TripCardProps) => {
+  const path = useLocation();
+
   return (
-    <div>
-      
-    </div>
+    <Link to={path.pathname === '/' || path.pathname.startsWith('/travel') ? `/travel/${id}` : `/trips/${id}`} className="trip-card">
+      <img src={imageUrl} alt={name} />
+
+      <article>
+        <h2>{name}</h2>
+        <figure>
+          <img src='/icons/location-mark.svg' alt='location' className='size-4' />
+          <figcaption>{location}</figcaption>
+        </figure>
+      </article>
+
+      <div className='mt-1 pl-2.5 pr-3.5 p-4'>
+        <ChipListComponent id='travel-chip'>
+          <ChipsDirective>
+            {tags?.map((tag, index) => (
+              <ChipDirective 
+                key={index} 
+                text={getFirstWord(tag)} 
+                cssClass={cn(index===1 ? '!bg-pink-50 !text-pink-500 !ml-1.5' : '!bg-success-50 !text-success-700')}
+              />
+            ))}
+          </ChipsDirective>
+        </ChipListComponent>
+      </div>
+
+      <article className='tripCard-pill'>{price}</article>
+    </Link>
   );
 };
 

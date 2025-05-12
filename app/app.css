@@ -269,9 +269,9 @@
         @apply text-sm md:text-lg font-semibold text-dark-100 line-clamp-2;
       }
       figure {
-        @apply flex items-center gap-2;
+        @apply flex items-center gap-1;
         figCaption {
-          @apply text-xs md:text-sm font-normal text-gray-100;
+          @apply text-xs md:text-sm font-normal text-gray-100 mt-1 md:mt-0;
         }
       }
     }

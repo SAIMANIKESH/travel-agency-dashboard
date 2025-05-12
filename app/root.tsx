@@ -4,10 +4,12 @@ import {
   Meta,
   Outlet,
   Scripts,
+  useLocation,
   ScrollRestoration,
 } from "react-router";
 
 import type { Route } from "./+types/root";
+import { capitalizeWords } from "./lib/utils";
 import "./app.css";
 
 export const links: Route.LinksFunction = () => [
@@ -24,15 +26,28 @@ export const links: Route.LinksFunction = () => [
 ];
 
 import { registerLicense } from "@syncfusion/ej2-base";
+import path from "path";
 
 registerLicense(import.meta.env.VITE_SYNCFUSION_LICENSE_KEY);
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const location = useLocation();
+  let subTitle = ""; 
+  if (location.pathname.slice(1).length > 1) {
+    subTitle = location.pathname.slice(1);
+    subTitle = subTitle.replace(/[-_\s]+/g, " "); // replace hyphens, underScores, extra white-spaces with single spaces
+    subTitle = capitalizeWords(subTitle);
+    subTitle = `- ${subTitle}`;
+  }
+
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Tourvista - Travel and Tour Booking" />
+        <link rel="icon" type="image/svg+xml" href="/icons/logo.svg" />
+        <title>{`Tourvista ${subTitle}`}</title>
         <Meta />
         <Links />
       </head>

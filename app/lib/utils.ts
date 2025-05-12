@@ -68,3 +68,9 @@ export const formatKey = (key: keyof TripFormData) => {
     .replace(/([A-Z])/g, " $1")
     .replace(/^./, (str) => str.toUpperCase());
 };
+
+export const capitalizeWords = (str: String) => {
+  return str.replace(/\b\w/g, function(char: String) {
+    return char.toUpperCase();
+  });
+};

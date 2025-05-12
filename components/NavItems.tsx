@@ -11,15 +11,15 @@ const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
   }
 
   return (
-    <section className='nav-items'>
-      <Link to='/' className='link-logo'>
-        <img src='/icons/logo.svg' alt='Logo' className='size-[30px]' />
+    <section className="nav-items">
+      <Link to="/" className="link-logo">
+        <img src="/icons/logo.svg" alt="Logo" className="size-[30px]" />
+        <h1 className="">Tourvista</h1>
       </Link>
-      <h1 className=''>Tourvisto</h1>
 
-      <div className='container'>
+      <div className="container">
         <nav>
-          {sidebarItems.map(({id, href, icon, label}) => (
+          {sidebarItems.map(({ id, href, icon, label }) => (
             <NavLink
               key={id}
               to={href}
@@ -28,33 +28,43 @@ const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
               // }
             >
               {({ isActive }) => (
-                <div className={cn('group nav-item', {
-                  'bg-primary-100 !text-white': isActive
-                })} onClick={handleClick}>
-                  <img src={icon} alt={label}
-                    className={`group-hover:brightness-0 size-0 group-hover:invert 
-                      ${isActive ? 'brightness-0 invert' : 'text-dark-200'}`
-                    } 
+                <div
+                  className={cn("group nav-item", {
+                    "bg-primary-100 !text-white": isActive,
+                  })}
+                  onClick={handleClick}
+                >
+                  <img
+                    src={icon}
+                    alt={label}
+                    className={`group-hover:brightness-10 size-0 group-hover:invert 
+                      ${isActive ? "brightness-0 invert" : "text-dark-200"}`}
                   />
+                  {label}
                 </div>
               )}
             </NavLink>
           ))}
         </nav>
 
-        <footer className='nav-footer'>
-          <img 
-            src={user?.image || '/images/david.webp'} 
-            alt={user?.name || 'John Doe'} 
-            className='rounded-full w-10 h-10' 
+        <footer className="nav-footer">
+          <img
+            src={user?.image || "/images/david.webp"}
+            alt={user?.name || "John Doe"}
+            className="rounded-full w-10 h-10"
           />
           <article>
             <h2>{user?.name}</h2>
             <p>{user?.email}</p>
           </article>
 
-          <button className='cursor-pointer' onClick={() => {console.log('Logout')}}>
-            <img src='/icons/logout.svg' alt='Logout' className='size-6' />
+          <button
+            className="cursor-pointer"
+            onClick={() => {
+              console.log("Logout");
+            }}
+          >
+            <img src="/icons/logout.svg" alt="Logout" className="size-6" />
           </button>
         </footer>
       </div>
