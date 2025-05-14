@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, NavLink, useLoaderData, useNavigate } from 'react-router';
-import { TbLogout2 } from "react-icons/tb";
-import { ChevronLast, ChevronFirst } from "lucide-react";
+import { TbLogout2, TbChevronLeftPipe } from "react-icons/tb";
 
 import { sidebarItems } from '~/constants';
 import { cn } from '~/lib/utils';
@@ -12,7 +11,6 @@ const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
     email: 'johndoe123@gmail.com',
     image: '/images/david.webp',
   }
-  const [expanded, setExpand] = useState(true);
 
   return (
     <section className="nav-items">
@@ -24,35 +22,26 @@ const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
 
         <button
           title="Hide"
-          className="btn-toggle cursor-pointer p-2 rounded-xl bg-gray-50 hover:bg-blue-100 lg:hidden"
+          className="cursor-pointer p-2 rounded-xl bg-gray-50 lg:hidden effects"
           onClick={handleClick}
         >
-          {expanded ? (
-            <ChevronFirst className="size-6" />
-          ) : (
-            <ChevronLast className="size-6" />
-          )}
+          <TbChevronLeftPipe className="size-6" />
         </button>
       </div>
 
       <div className="container">
         <nav>
-          {sidebarItems.map(({ id, href, icon, label }) => (
+          {sidebarItems.map(({ id, href, Icon, label }) => (
             <NavLink key={id} to={href}>
               {({ isActive }) => (
                 <div
                   className={cn("group nav-item", {
-                    "bg-sky-500 !text-white hover:bg-blue-500": isActive,
-                    "hover:bg-sky-100 hover:!text-indigo-800 !text-gray-100":
-                      !isActive,
+                    "bg-blue-500 !text-white hover:bg-blue-600": isActive,
+                    effects: !isActive,
                   })}
                   onClick={handleClick}
                 >
-                  <img
-                    src={icon}
-                    alt={label}
-                    className="size-4 md:size-6 lol"
-                  />
+                  <Icon className="size-4 md:size-6" />
                   <span className="mt-0.5">{label}</span>
                 </div>
               )}
@@ -74,12 +63,12 @@ const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
           </div>
 
           <button
-            className="cursor-pointer"
+            className="cursor-pointer text-gray-100 hover:text-black"
             onClick={() => {
               console.log("Logout");
             }}
           >
-            <TbLogout2 title="Log out" className="size-7 md:mt-1" />
+            <TbLogout2 title="Log out" className="size-6 md:mt-1" />
           </button>
         </footer>
       </div>

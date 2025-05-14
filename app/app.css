@@ -69,6 +69,9 @@
 }
 
 @layer components {
+  .effects {
+    @apply hover:!bg-blue-50 !text-gray-100 hover:!text-blue-900
+  }
   .error {
     @apply text-red-500 text-base font-medium text-center;
   }
@@ -283,7 +286,7 @@
     }
   }
   .nav-footer {
-    @apply flex justify-between items-center gap-2.5 pb-8;
+    @apply flex justify-between items-center gap-5 pb-8;
     img {
       @apply size-10 rounded-full aspect-square;
     }

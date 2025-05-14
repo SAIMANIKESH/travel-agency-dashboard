@@ -18,4 +18,5 @@
   "typescript.suggest.completeFunctionCalls": true,
   "typescript.suggest.includeAutomaticOptionalChainCompletions": true,
   "typescript.suggest.includeCompletionsForImportStatements": true,
+  "postman.settings.dotenv-detection-notification-visibility": false,
 }

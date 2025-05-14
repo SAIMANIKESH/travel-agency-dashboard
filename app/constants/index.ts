@@ -1,5 +1,8 @@
 import React from "react";
 import type { AxisModel } from "@syncfusion/ej2-react-charts";
+import { LuLayoutDashboard } from "react-icons/lu";
+import { FaUsers } from "react-icons/fa";
+import { TbMapSearch } from "react-icons/tb";
 
 import { formatDate } from "~/lib/utils";
 
@@ -7,18 +10,21 @@ export const sidebarItems = [
   {
     id: 1,
     icon: "/icons/dashboard.svg",
+    Icon: LuLayoutDashboard,
     label: "Dashboard",
     href: "/dashboard",
   },
   {
-    id: 3,
+    id: 2,
     icon: "/icons/users.svg",
+    Icon: FaUsers,
     label: "All Users",
     href: "/all-users",
   },
   {
-    id: 4,
+    id: 3,
     icon: "/icons/itinerary.svg",
+    Icon: TbMapSearch,
     label: "AI Trips",
     href: "/ai-trips",
   },
