@@ -1,10 +1,12 @@
+import React from "react";
 import type { AxisModel } from "@syncfusion/ej2-react-charts";
+
 import { formatDate } from "~/lib/utils";
 
 export const sidebarItems = [
   {
     id: 1,
-    icon: "/icons/home.svg",
+    icon: "/icons/dashboard.svg",
     label: "Dashboard",
     href: "/dashboard",
   },
@@ -165,7 +167,7 @@ export const allTrips = [
     itinerary: [{ location: "Thailand" }],
     tags: ["Adventure", "Culture"],
     travelStyle: "Solo",
-    estimatedPrice: "$1,000",
+    estimatedPrice: "$ 1,700",
   },
   {
     id: 2,
@@ -174,7 +176,7 @@ export const allTrips = [
     itinerary: [{ location: "Paris" }],
     tags: ["Relaxation", "Culinary"],
     travelStyle: "Family",
-    estimatedPrice: "$2,000",
+    estimatedPrice: "$ 2,300",
   },
   {
     id: 3,
@@ -183,7 +185,7 @@ export const allTrips = [
     itinerary: [{ location: "Japan" }],
     tags: ["Shopping", "Luxury"],
     travelStyle: "Couple",
-    estimatedPrice: "$3,000",
+    estimatedPrice: "$ 3,100",
   },
   {
     id: 4,
@@ -192,7 +194,7 @@ export const allTrips = [
     itinerary: [{ location: "Croatia" }],
     tags: ["Historical", "Culture"],
     travelStyle: "Friends",
-    estimatedPrice: "$4,000",
+    estimatedPrice: "$ 4,200",
   },
 ];
 
