@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Travel Agency Platform</h1>
+  <h1># Travel Agency Platform</h1>
 </div>
 
 ## <a name="preview" style='text-decoration:none;'>🔍 Preview</a>
@@ -97,6 +97,6 @@ Public Assets, Figma design used in this project can be found [here.](https://js
 
 Built this project step by step with detailed tutorial on <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a> YouTube.
 
-For Video Link [Click Here.](https://www.youtube.com/watch?v=xZ1ba-RLrjo&t=2072s&ab_channel=JavaScriptMastery)
+For Youtube Video Link [Click Here.](https://www.youtube.com/watch?v=xZ1ba-RLrjo&t=2072s&ab_channel=JavaScriptMastery)
 
 <br />

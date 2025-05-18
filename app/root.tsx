@@ -7,9 +7,12 @@ import {
   useLocation,
   ScrollRestoration,
 } from "react-router";
+import * as Sentry from "@sentry/react-router";
+import { registerLicense } from "@syncfusion/ej2-base";
 
+import { sidebarItems } from "./constants";
 import type { Route } from "./+types/root";
-import { capitalizeWords } from "./lib/utils";
+import { getTabTitle } from "./lib/utils";
 import "./app.css";
 
 export const links: Route.LinksFunction = () => [
@@ -25,20 +28,14 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
-import { registerLicense } from "@syncfusion/ej2-base";
-import path from "path";
-
 registerLicense(import.meta.env.VITE_SYNCFUSION_LICENSE_KEY);
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const location = useLocation();
-  let subTitle = ""; 
-  if (location.pathname.slice(1).length > 1) {
-    subTitle = location.pathname.slice(1);
-    subTitle = subTitle.replace(/[-_\s]+/g, " "); // replace hyphens, underScores, extra white-spaces with single spaces
-    subTitle = capitalizeWords(subTitle);
-    subTitle = `- ${subTitle}`;
-  }
+  const location = useLocation().pathname;
+
+  let tabTitle;
+  tabTitle = sidebarItems.findIndex(path => path.href === location);
+  tabTitle = tabTitle === -1 ? getTabTitle(location) : `${sidebarItems[tabTitle]?.label} - Tourvista`;
 
   return (
     <html lang="en">
@@ -47,7 +44,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Tourvista - Travel and Tour Booking" />
         <link rel="icon" type="image/svg+xml" href="/icons/logo.svg" />
-        <title>{`Tourvista ${subTitle}`}</title>
+        <title>{tabTitle}</title>
         <Meta />
         <Links />
       </head>
@@ -76,6 +73,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
         ? "The requested page could not be found."
         : error.statusText || details;
   } else if (import.meta.env.DEV && error && error instanceof Error) {
+    Sentry.captureException(error);
     details = error.message;
     stack = error.stack;
   }

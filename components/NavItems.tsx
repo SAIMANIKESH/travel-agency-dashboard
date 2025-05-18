@@ -1,15 +1,18 @@
 import React from 'react';
-import { Link, NavLink, useLoaderData, useNavigate } from 'react-router';
+import { Link, NavLink, redirect, useLoaderData, useNavigate } from 'react-router';
 import { TbLogout2, TbChevronLeftPipe } from "react-icons/tb";
 
 import { sidebarItems } from '~/constants';
 import { cn } from '~/lib/utils';
+import { logoutUser } from '~/appwrite/auth';
 
 const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
-  const user = {
-    name: 'John Doe',
-    email: 'johndoe123@gmail.com',
-    image: '/images/david.webp',
+  const user = useLoaderData();
+  const navigate = useNavigate();
+
+  const handleLogOut = async () => {
+    await logoutUser();
+    navigate("/sign-in");
   }
 
   return (
@@ -21,7 +24,7 @@ const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
         </Link>
 
         <button
-          title="Hide"
+          title="Close"
           className="cursor-pointer p-2 rounded-xl bg-gray-50 lg:hidden effects"
           onClick={handleClick}
         >
@@ -52,9 +55,11 @@ const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
         <footer className="nav-footer">
           <div className="flex items-center gap-2">
             <img
-              src={user?.image || "/images/david.webp"}
+              src={user?.imageUrl || "/images/david.webp"}
               alt={user?.name || "John Doe"}
+              title={user?.name}
               className="rounded-full w-10 h-10"
+              referrerPolicy='no-referrer'
             />
             <article>
               <h2>{user?.name}</h2>
@@ -64,9 +69,7 @@ const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
 
           <button
             className="cursor-pointer text-gray-100 hover:text-black"
-            onClick={() => {
-              console.log("Logout");
-            }}
+            onClick={handleLogOut}
           >
             <TbLogout2 title="Log out" className="size-6 md:mt-1" />
           </button>

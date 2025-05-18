@@ -69,8 +69,13 @@ export const formatKey = (key: keyof TripFormData) => {
     .replace(/^./, (str) => str.toUpperCase());
 };
 
-export const capitalizeWords = (str: String) => {
-  return str.replace(/\b\w/g, function(char: String) {
-    return char.toUpperCase();
-  });
-};
+export function getTabTitle(pathname: string): string {
+  if (pathname === "/") return "Tourvista";
+
+  const parts = pathname.split("/").filter(Boolean); // remove empty strings
+  const capitalized = parts.map(
+    (part) => part.charAt(0).toUpperCase() + part.slice(1)
+  );
+
+  return `${capitalized.reverse().join(" - ")} - Tourvista`;
+}

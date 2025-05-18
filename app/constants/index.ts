@@ -26,7 +26,7 @@ export const sidebarItems = [
     icon: "/icons/itinerary.svg",
     Icon: TbMapSearch,
     label: "AI Trips",
-    href: "/ai-trips",
+    href: "/trips",
   },
 ];
 
