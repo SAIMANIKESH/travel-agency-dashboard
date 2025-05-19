@@ -78,4 +78,4 @@ export function getTabTitle(pathname: string): string {
   );
 
   return `${capitalized.reverse().join(" - ")} - Tourvista`;
-}
+};

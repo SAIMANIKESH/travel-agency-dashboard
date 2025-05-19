@@ -11,8 +11,9 @@ import * as Sentry from "@sentry/react-router";
 import { registerLicense } from "@syncfusion/ej2-base";
 
 import { sidebarItems } from "./constants";
-import type { Route } from "./+types/root";
 import { getTabTitle } from "./lib/utils";
+import type { Route } from "./+types/root";
+
 import "./app.css";
 
 export const links: Route.LinksFunction = () => [
@@ -55,7 +56,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </body>
     </html>
   );
-}
+};
 
 export default function App() {
   return <Outlet />;

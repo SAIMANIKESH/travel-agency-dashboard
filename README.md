@@ -44,6 +44,23 @@ and many more, built for scalability and a smooth user experience.
 
 ## <a name="quick-start" style='text-decoration:none;'> 🚀 Quick Start</a>
 
+Follow these steps to set up the project locally on your machine.
+
+**Prerequisites**
+
+Make sure you have the following installed on your machine:
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
+
+**Cloning the Repository**
+
+```bash
+git clone https://github.com/SAIMANIKESH/travel-agency-dashboard.git
+cd travel-agency-dashboard
+```
+
 **Installation**
 
 Install the project dependencies using npm:
@@ -52,11 +69,6 @@ Install the project dependencies using npm:
 npm install
 ```
 
-**Running the Project**
-
-```bash
-npm run dev
-```
 
 **Set Up Environment Variables**
 
@@ -97,6 +109,6 @@ Public Assets, Figma design used in this project can be found [here.](https://js
 
 Built this project step by step with detailed tutorial on <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a> YouTube.
 
-For Youtube Video Link [Click Here.](https://www.youtube.com/watch?v=xZ1ba-RLrjo&t=2072s&ab_channel=JavaScriptMastery)
+For YouTube Video Link [Click Here.](https://www.youtube.com/watch?v=xZ1ba-RLrjo&t=2072s&ab_channel=JavaScriptMastery)
 
 <br />
