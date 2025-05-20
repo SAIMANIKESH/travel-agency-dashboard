@@ -22,7 +22,7 @@ export const action = async ( { request }: ActionFunctionArgs ) => {
       {
         "name": "A descriptive title for the trip",
         "description": "A brief description of the trip and its highlights not exceeding 100 words",
-        "estimatedPrice": "Lowest average price for the trip in USD, e.g.$price",
+        "estimatedPrice": "Lowest average price for the trip in USD, e.g. $price",
         "duration": ${numberOfDays},
         "budget": "${budget}",
         "travelStyle": "${travelStyle}",
@@ -75,7 +75,7 @@ export const action = async ( { request }: ActionFunctionArgs ) => {
     const result = await database.createDocument(
       appwriteConfig.databaseId, appwriteConfig.tripCollectionId, ID.unique(), 
       {
-        tripDetail: JSON.stringify(trip),
+        tripDetail: JSON.stringify(trip), // tripDetail coming from appwrite trips collection >> attribute
         createdAt: new Date().toISOString(),
         imageUrls, userId,
       }

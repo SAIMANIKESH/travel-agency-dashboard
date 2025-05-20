@@ -91,6 +91,8 @@ const CreateTrip = () => {
       setError('Please provide values for all fields');
       setLoading(false);
       return;
+    } else {
+      setError(null);
     }
 
     if (formData.duration < 1 || formData.duration > 10) {

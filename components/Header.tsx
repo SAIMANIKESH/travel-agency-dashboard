@@ -42,7 +42,7 @@ const Header = ({ title, description, ctaText, ctaUrl }: Props) => {
         <Link to={ctaUrl}>
           <ButtonComponent
             type="button"
-            className="button-class !h-11 !w-full md:w-[240px]"
+            className="button-class !h-11 !w-full md:w-[240px] "
           >
             <img src="/icons/plus.svg" alt="plus" className="size-5" />
             <span className="p-16-normal text-white md:mb-0.5 md:mr-2">{ctaText}</span>
