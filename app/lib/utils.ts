@@ -70,12 +70,12 @@ export const formatKey = (key: keyof TripFormData) => {
 };
 
 export function getTabTitle(pathname: string): string {
-  if (pathname === "/") return "Tourvisto";
+  if (pathname === "/") return "Tourvista";
 
   const parts = pathname.split("/").filter(Boolean); // remove empty strings
   const capitalized = parts.map(
     (part) => part.charAt(0).toUpperCase() + part.slice(1)
   );
 
-  return `${capitalized.reverse().join(" - ")} - Tourvisto`;
+  return `${capitalized.reverse().join(" - ")} - Tourvista`;
 }

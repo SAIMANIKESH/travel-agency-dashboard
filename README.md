@@ -4,7 +4,7 @@
 
 ## <a name="preview" style='text-decoration:none;'>🔍 Preview</a>
 
-- Deployed App Link - [View](https://tourvisto.netlify.app)
+- Deployed App Link - [View](https://Tourvista.netlify.app)
 - Git Repository Link - [View](https://github.com/SAIMANIKESH/travel-agency-dashboard)
 
 ## <a name="introduction" style='text-decoration:none;'>🤖 Introduction</a>
@@ -103,7 +103,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser to view the 
 
 ## <a name="assets" style='text-decoration:none;'>🗃️ Assets</a>
 
-Public Assets, Figma design used in this project can be found [here.](https://jsm.dev/tourvisto-kit)
+Public Assets, Figma design used in this project can be found [here.](https://jsm.dev/Tourvista-kit)
 
 ## <a name="credits" style='text-decoration:none;'>🤝 Credits</a>
 

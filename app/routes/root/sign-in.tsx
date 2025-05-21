@@ -23,7 +23,7 @@ const signIn = () => {
             <Link to="/">
               <img src="/icons/logo.svg" alt="Logo" className="size-[30px]" />
             </Link>
-            <h1 className="p-28-bold text-dark-100">Tourvisto</h1>
+            <h1 className="p-28-bold text-dark-100">Tourvista</h1>
           </header>
 
           <article>

@@ -39,7 +39,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   tabTitle =
     tabTitle === -1
       ? getTabTitle(location)
-      : `${sidebarItems[tabTitle]?.label} - Tourvisto`;
+      : `${sidebarItems[tabTitle]?.label} - Tourvista`;
 
   return (
     <html lang="en">
@@ -48,7 +48,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="Tourvisto - Travel and Tour Booking"
+          content="Tourvista - Travel and Tour Booking"
         />
         <link rel="icon" type="image/svg+xml" href="/icons/logo.svg" />
         <title>{tabTitle}</title>
