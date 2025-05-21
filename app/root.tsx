@@ -35,15 +35,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation().pathname;
 
   let tabTitle;
-  tabTitle = sidebarItems.findIndex(path => path.href === location);
-  tabTitle = tabTitle === -1 ? getTabTitle(location) : `${sidebarItems[tabTitle]?.label} - Tourvista`;
+  tabTitle = sidebarItems.findIndex((path) => path.href === location);
+  tabTitle =
+    tabTitle === -1
+      ? getTabTitle(location)
+      : `${sidebarItems[tabTitle]?.label} - Tourvisto`;
 
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Tourvista - Travel and Tour Booking" />
+        <meta
+          name="description"
+          content="Tourvisto - Travel and Tour Booking"
+        />
         <link rel="icon" type="image/svg+xml" href="/icons/logo.svg" />
         <title>{tabTitle}</title>
         <Meta />
@@ -56,7 +62,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </body>
     </html>
   );
-};
+}
 
 export default function App() {
   return <Outlet />;
@@ -90,4 +96,4 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       )}
     </main>
   );
-};
+}

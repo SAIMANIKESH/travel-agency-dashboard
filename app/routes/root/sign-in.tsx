@@ -1,21 +1,20 @@
-import React from 'react'
-import { Link, redirect } from 'react-router';
-import { ButtonComponent } from '@syncfusion/ej2-react-buttons';
-import { loginWithGoogle } from '~/appwrite/auth';
-import { account } from '~/appwrite/client';
-import Dashboard from './../admin/dashboard';
+import React from "react";
+import { Link, redirect } from "react-router";
+import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
+import { loginWithGoogle } from "~/appwrite/auth";
+import { account } from "~/appwrite/client";
+import Dashboard from "./../admin/dashboard";
 
 export async function clientLoader() {
   try {
     const user = await account.get();
-    if (user.$id) return redirect('/');
+    if (user.$id) return redirect("/");
   } catch (e) {
-    console.log('Error fetching user data', e);
+    console.log("Error fetching user data", e);
   }
 }
 
 const signIn = () => {
-
   return (
     <main className="auth">
       <section className="size-full glassmorphism flex-center px-6">
@@ -24,7 +23,7 @@ const signIn = () => {
             <Link to="/">
               <img src="/icons/logo.svg" alt="Logo" className="size-[30px]" />
             </Link>
-            <h1 className="p-28-bold text-dark-100">Tourvista</h1>
+            <h1 className="p-28-bold text-dark-100">Tourvisto</h1>
           </header>
 
           <article>
@@ -44,7 +43,9 @@ const signIn = () => {
             onClick={loginWithGoogle}
           >
             <img src="/icons/google.svg" alt="Google" className="size-5" />
-            <span className="p-18-semibold text-white">Sign in with Google</span>
+            <span className="p-18-semibold text-white">
+              Sign in with Google
+            </span>
           </ButtonComponent>
         </div>
       </section>

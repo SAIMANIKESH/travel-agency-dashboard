@@ -1,10 +1,16 @@
-import React from 'react';
-import { Link, NavLink, redirect, useLoaderData, useNavigate } from 'react-router';
+import React from "react";
+import {
+  Link,
+  NavLink,
+  redirect,
+  useLoaderData,
+  useNavigate,
+} from "react-router";
 import { TbLogout2, TbChevronLeftPipe } from "react-icons/tb";
 
-import { sidebarItems } from '~/constants';
-import { cn } from '~/lib/utils';
-import { logoutUser } from '~/appwrite/auth';
+import { sidebarItems } from "~/constants";
+import { cn } from "~/lib/utils";
+import { logoutUser } from "~/appwrite/auth";
 
 const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
   const user = useLoaderData();
@@ -13,14 +19,14 @@ const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
   const handleLogOut = async () => {
     await logoutUser();
     navigate("/sign-in");
-  }
+  };
 
   return (
     <section className="nav-items">
       <div className="nav-header">
         <Link to="/" className="link-logo">
           <img src="/icons/logo.svg" alt="Logo" className="size-[30px]" />
-          <h1 className="">Tourvista</h1>
+          <h1 className="">Tourvisto</h1>
         </Link>
 
         <button
@@ -59,7 +65,7 @@ const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
               alt={user?.name || "John Doe"}
               title={user?.name}
               className="rounded-full w-10 h-10"
-              referrerPolicy='no-referrer'
+              referrerPolicy="no-referrer"
             />
             <article>
               <h2>{user?.name}</h2>

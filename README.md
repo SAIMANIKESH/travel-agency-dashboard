@@ -4,7 +4,7 @@
 
 ## <a name="preview" style='text-decoration:none;'>🔍 Preview</a>
 
-- Deployed App Link - [View](https://travel-agency.netlify.app)
+- Deployed App Link - [View](https://tourvisto.netlify.app)
 - Git Repository Link - [View](https://github.com/SAIMANIKESH/travel-agency-dashboard)
 
 ## <a name="introduction" style='text-decoration:none;'>🤖 Introduction</a>
