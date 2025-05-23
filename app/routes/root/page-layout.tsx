@@ -1,25 +1,30 @@
 import React from 'react';
-import { TbLogout2 } from 'react-icons/tb';
+import { redirect, Outlet } from "react-router";
 
-import { logoutUser } from '~/appwrite/auth';
-import { useNavigate } from 'react-router';
+import { storeUserData, getExistingUser } from '~/appwrite/auth';
+import { account } from '~/appwrite/client';
+import RootNavbar from 'components/RootNavbar';
+
+export async function clientLoader() {
+  try {
+    const user = await account.get();
+
+    if (!user.$id) return redirect('/sign-in');
+
+    const existingUser = await getExistingUser(user.$id);
+    return existingUser?.$id ? existingUser : await storeUserData();
+  } catch (error) {
+    console.error('Error fetching user data: ', error);
+    return redirect('/sign-in');
+  }
+}
 
 const PageLayout = () => {
-  const navigate = useNavigate();
-  const handleLogOut = async () => {
-    await logoutUser();
-    navigate("/sign-in");
-  };
-
   return (
-    <main className=''>
-      <button
-        className="cursor-pointer text-gray-100 hover:text-black"
-        onClick={handleLogOut}
-      >
-        <TbLogout2 title="Log out" className="size-6 md:mt-1" />
-      </button>
-    </main>
+    <div className='bg-light-200'>
+      <RootNavbar />
+      <Outlet />
+    </div>
   );
 };
 

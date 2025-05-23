@@ -47,7 +47,7 @@ const CreateTrip = () => {
       try {
         const url = "https://restcountries.com/v3.1/all";
         const response = await axios.get(url, { timeout: 20000 });
-
+        console.log(response.data[0]);
         const countries = response.data.map((country: any) => ({
           name: country.flag + " " + country.name.common,
           coordinates: country.latlng,
@@ -91,8 +91,6 @@ const CreateTrip = () => {
       setError('Please provide values for all fields');
       setLoading(false);
       return;
-    } else {
-      setError(null);
     }
 
     if (formData.duration < 1 || formData.duration > 10) {
@@ -135,9 +133,8 @@ const CreateTrip = () => {
       console.error('Error generating trip', e);
     } finally {
       setLoading(false);
+      // console.log('Form Submitted');
     }
-
-    console.log('Form Submitted');
   };
 
   const handleChange = (key: keyof TripFormData, value: string | undefined) => {

@@ -98,27 +98,18 @@ const Dashboard = ({ loaderData }: Route.ComponentProps) => {
         <h1 className="text-xl font-semibold text-dark-100">Created Trips</h1>
 
         <div className="trip-grid">
-          {allTrips.map(
-            ({
-              id,
-              name,
-              imageUrls,
-              itinerary,
-              interests,
-              travelStyle,
-              estimatedPrice,
-            }) => (
-              <TripCard
-                key={id}
-                id={id.toString()}
-                name={name!}
-                imageUrl={imageUrls[1]}
-                location={itinerary?.[0]?.location ?? ""}
-                tags={[interests!, travelStyle!]}
-                price={estimatedPrice!}
-              />
-            )
-          )}
+          {allTrips.map(({id, name, imageUrls, itinerary,
+            interests, travelStyle, estimatedPrice }) => (
+            <TripCard
+              key={id}
+              id={id.toString()}
+              name={name!}
+              imageUrl={imageUrls[1]}
+              location={itinerary?.[0]?.location ?? ""}
+              tags={[interests!, travelStyle!]}
+              price={estimatedPrice!}
+            />
+          ))}
         </div>
       </section>
 
@@ -201,12 +192,6 @@ const Dashboard = ({ loaderData }: Route.ComponentProps) => {
 
             <GridComponent
               dataSource={dataSource}
-              // allowSorting
-              // allowFiltering
-              // allowPaging
-              // pageSettings={{ pageSize: 4 }}
-              // rowHeight={70}
-              // height="auto"
               gridLines="Both"
             >
               <ColumnsDirective>
@@ -216,7 +201,7 @@ const Dashboard = ({ loaderData }: Route.ComponentProps) => {
                   width="200"
                   textAlign="Left"
                   template={(rowData: UserData) => (
-                    <div className="flex items-center gap-1.5 px-4">
+                    <div className="flex items-center gap-2">
                       <img
                         src={rowData.imageUrl}
                         alt='user'

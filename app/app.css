@@ -143,10 +143,10 @@
   }
 
   .travel-hero {
-    @apply bg-hero bg-origin-content bg-cover;
+    @apply bg-hero bg-origin-content bg-cover h-screen;
 
     div {
-      @apply flex flex-col bg-linear100 bg-cover;
+      @apply flex flex-col bg-linear100 bg-cover h-screen;
 
       section {
         @apply py-48 justify-center items-start flex flex-col gap-6;
@@ -172,7 +172,7 @@
     }
 
     .back-link {
-      @apply flex items-center justify-center gap-2.5 py-3 px-[30px] border-gray-200 rounded-lg shadow-500 bg-white h-[50px] w-[240px];
+      @apply flex items-center justify-center gap-2.5 py-3 px-[10px] border-gray-200 rounded-lg shadow-500 bg-white h-[50px] w-[140px];
 
       img {
         @apply size-[17px];
@@ -318,7 +318,7 @@
   .root-nav {
     @apply flex justify-between gap-4  items-center;
     a {
-      @apply flex items-center gap-1.5 py-10;
+      @apply flex items-center gap-1.5 py-8;
       h1 {
         @apply text-base md:text-2xl font-bold text-dark-100;
       }
@@ -389,7 +389,7 @@
     }
   }
   .featured-card {
-    @apply flex flex-col justify-between gap-3.5 p-[30px] min-h-[230px] h-full;
+    @apply flex flex-col justify-between gap-3.5 p-[14px] min-h-[230px] h-full;
   }
   .featured {
     @apply flex flex-col md:flex-row gap-[30px];

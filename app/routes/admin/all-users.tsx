@@ -2,7 +2,6 @@ import React from 'react';
 import { ColumnDirective, ColumnsDirective, GridComponent } from "@syncfusion/ej2-react-grids";
 
 import { Header } from '../../../components';
-import { users } from '~/constants'
 import { getAllUsers } from '~/appwrite/auth';
 import type { Route } from './+types/all-users';
 import { cn, formatDate } from '~/lib/utils';

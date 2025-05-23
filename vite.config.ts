@@ -25,5 +25,8 @@ export default defineConfig(config => {
     ssr: {
       noExternal: [/@syncfusion/],
     },
+    server: {
+      allowedHosts: ["c53d-223-228-102-34.ngrok-free.app"], // run -> ngrok http 5173 (simply port)
+    },
   };
 });

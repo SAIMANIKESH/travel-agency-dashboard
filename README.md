@@ -4,7 +4,7 @@
 
 ## <a name="preview" style='text-decoration:none;'>🔍 Preview</a>
 
-- Deployed App Link - [View](https://Tourvista.netlify.app)
+- Deployed App Link - [View](https://tourvista-jade.vercel.app/)
 - Git Repository Link - [View](https://github.com/SAIMANIKESH/travel-agency-dashboard)
 
 ## <a name="introduction" style='text-decoration:none;'>🤖 Introduction</a>
@@ -89,11 +89,12 @@ VITE_APPWRITE_DATABASE_ID=
 VITE_APPWRITE_USERS_COLLECTION_ID=
 VITE_APPWRITE_ITINERARY_COLLECTION_ID=
 
+# Backend
 STRIPE_SECRET_KEY=
 GEMINI_API_KEY=
 UNSPLASH_ACCESS_KEY=
 
-VITE_BASE_URL="http://localhost:5173"
+VITE_BASE_URL=http://localhost:5173
 ```
 
 </details>
